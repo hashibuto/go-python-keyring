@@ -24,6 +24,9 @@ jobs:
     - name: Update PATH variable
       run: echo "$HOME/go/bin" >> $GITHUB_PATH
 
+    - name: Install keyring
+      run: pip install keyring sagecipher
+
     - name: Run tests
       run: make test
 
