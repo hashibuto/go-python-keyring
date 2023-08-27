@@ -1,4 +1,7 @@
 name: release-jobs
+permissions: 
+  contents: write
+
 on:
   workflow_dispatch:
   pull_request:
