@@ -26,7 +26,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        apt get update -y
+        apt-get update -y
         apt-get install -y gnome-keyring
         pip install keyring sagecipher
 
