@@ -27,11 +27,16 @@ jobs:
     - name: Update PATH variable
       run: echo "$HOME/go/bin" >> $GITHUB_PATH
 
-    # - name: Install dependencies
-    #   run: |
-    #     sudo apt-get update -y
-    #     sudo apt-get install -y gnome-keyring
-    #     pip install keyring sagecipher
+    - name: Install dependencies
+      run: |
+        sudo apt-get update -y
+        sudo apt-get install -y gnome-keyring openssh-client
+        pip install keyring sagecipher
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        eval "$(ssh-agent -s)"
+        ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
+        ssh-add ~/.ssh/id_rsa
 
 
     # - name: Run tests

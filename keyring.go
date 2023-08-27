@@ -32,7 +32,7 @@ func NewKeyring(group string, config *Config) *Keyring {
 func (kr *Keyring) mkEnv() []string {
 	env := []string{}
 	if kr.config.Backend != "" {
-		env = append(env, fmt.Sprintf("KEYRING_BACKEND=%s", kr.config.Backend))
+		env = append(env, fmt.Sprintf("PYTHON_KEYRING_BACKEND=%s", kr.config.Backend))
 	}
 
 	if kr.config.NoDisplay {
